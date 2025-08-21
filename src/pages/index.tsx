@@ -333,7 +333,6 @@ const ApuAppWebsite = () => {
     );
   };
 
-  // Mostrar loading enquanto verifica a autenticação
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center">
@@ -608,7 +607,7 @@ const ApuAppWebsite = () => {
             {/* Conteúdo */}
             <div className="relative z-10 max-w-4xl mx-auto">
               <h1
-                style={{ fontFamily: "lequire" }}
+                style={{ fontFamily: "lequire, sans-serif" }}
                 className="text-5xl md:text-7xl mb-6 text-white animate-fade-in"
               >
                 Agitamos a sua vida
@@ -631,12 +630,12 @@ const ApuAppWebsite = () => {
                   <Download className="w-5 h-5" />
                   Baixar Agora
                 </button>
-                  <button
-                    onClick={handleClick}
-                    className="px-8 py-4 bg-black/40 backdrop-blur-sm rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:text-white transition-all duration-300 border border-gray-600 flex items-center gap-2"
-                  >
-                    Cadastrar uma Festa
-                  </button>
+                <button
+                  onClick={handleClick}
+                  className="px-8 py-4 bg-black/40 backdrop-blur-sm rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:text-white transition-all duration-300 border border-gray-600 flex items-center gap-2"
+                >
+                  Cadastrar uma Festa
+                </button>
                 {isLoggedIn ? (
                   <button
                     onClick={handleClick2}
@@ -1231,67 +1230,67 @@ const ApuAppWebsite = () => {
         </Modal>
 
         {/* Social Media Links (lateral) */}
-<div className="fixed right-6 bottom-1/2 z-50 flex flex-col gap-4 items-center">
-  <a
-    href="https://instagram.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram"
-    className="group bg-white/10 hover:bg-pink-600/80 transition-colors rounded-full p-3 shadow-lg"
-    style={{ backdropFilter: "blur(6px)" }}
-  >
-    <Image
-      src={InstaIcon}
-      alt="Instagram"
-      width={28}
-      height={28}
-      className="group-hover:scale-110 transition-transform"
-    />
-  </a>
-  <a
-    href="https://facebook.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Facebook"
-    className="group bg-white/10 hover:bg-blue-600/80 transition-colors rounded-full p-3 shadow-lg"
-    style={{ backdropFilter: "blur(6px)" }}
-  >
-    <Image
-      src={FacebookIcon}
-      alt="Facebook"
-      width={28}
-      height={28}
-      className="group-hover:scale-110 transition-transform"
-    />
-  </a>
-</div>
+        <div className="fixed right-6 bottom-1/2 z-50 flex flex-col gap-4 items-center">
+          <a
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="group bg-white/10 hover:bg-pink-600/80 transition-colors rounded-full p-3 shadow-lg"
+            style={{ backdropFilter: "blur(6px)" }}
+          >
+            <Image
+              src={InstaIcon}
+              alt="Instagram"
+              width={28}
+              height={28}
+              className="group-hover:scale-110 transition-transform"
+            />
+          </a>
+          <a
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="group bg-white/10 hover:bg-blue-600/80 transition-colors rounded-full p-3 shadow-lg"
+            style={{ backdropFilter: "blur(6px)" }}
+          >
+            <Image
+              src={FacebookIcon}
+              alt="Facebook"
+              width={28}
+              height={28}
+              className="group-hover:scale-110 transition-transform"
+            />
+          </a>
+        </div>
 
-      {/* Botão flutuante do WhatsApp (canto inferior direito) */}
-      <div className="fixed right-6 bottom-6 z-50">
-        <a
-          href="https://wa.me/244928051534"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp"
-          className="group bg-green-500/60 hover:bg-green-600 transition-colors rounded-full p-4 shadow-2xl flex items-center justify-center"
-          style={{ boxShadow: "0 4px 24px 0 rgba(37, 211, 102, 0.4)" }}
-        >
-          <Image
-            src={WhatsappIcon}
-            alt="WhatsApp"
-            width={30}
-            height={30}
-            className="group-hover:scale-110 transition-transform"
-          />
-        </a>
+        {/* Botão flutuante do WhatsApp (canto inferior direito) */}
+        <div className="fixed right-6 bottom-6 z-50">
+          <a
+            href="https://wa.me/244928051534"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="group bg-green-500/60 hover:bg-green-600 transition-colors rounded-full p-4 shadow-2xl flex items-center justify-center"
+            style={{ boxShadow: "0 4px 24px 0 rgba(37, 211, 102, 0.4)" }}
+          >
+            <Image
+              src={WhatsappIcon}
+              alt="WhatsApp"
+              width={30}
+              height={30}
+              className="group-hover:scale-110 transition-transform"
+            />
+          </a>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-24 py-12 border-t border-white/20 text-center text-white/60 text-sm select-none">
+          <p>Desenvolvido por - Alcino Jaime</p>
+          &copy; {new Date().getFullYear()} Agita. Todos os direitos reservados.
+        </footer>
       </div>
-
-      {/* Footer */}
-      <footer className="mt-24 py-12 border-t border-white/20 text-center text-white/60 text-sm select-none">
-        <p>Desenvolvido por - Alcino Jaime</p>
-        &copy; {new Date().getFullYear()} Agita. Todos os direitos reservados.
-      </footer>
-    </div>
     </>
   );
 };
