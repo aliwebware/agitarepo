@@ -7,9 +7,7 @@
 /* === Registro da fonte Lequire === */
 @font-face {
   font-family: 'Lequire';
-  src: url('/fonts/lequire.woff2') format('woff2'),
-       url('/fonts/lequire.woff') format('woff'),
-       url('/fonts/Lequire.otf') format('opentype');
+  src: url('/fonts/Lequire.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }

@@ -585,70 +585,73 @@ const ApuAppWebsite = () => {
         {/* Main Content */}
         <div className="relative z-10 pt-20">
           {/* Hero Section */}
-          <div className="relative container mx-auto px-4 py-16 text-center overflow-hidden">
+            <div className="relative container mx-auto px-4 py-32 min-h-[70vh] flex items-center justify-center text-center overflow-hidden">
             {/* Background Image com fade effect */}
             <div className="absolute inset-0 z-0">
-              <Image
-                src="/fundo.jpg"
-                alt="Festa background"
-                fill
-                className="object-cover opacity-50 animate-fade-in mt-4"
-                style={{
-                  maskImage:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%)",
-                  WebkitMaskImage:
-                    "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%)",
-                }}
-                priority
-              />
+              <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover opacity-50 animate-fade-in mt-4"
+              style={{
+                maskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%)",
+                WebkitMaskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%)",
+              }}
+              >
+              <source src="/bgv.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeo em background.
+              </video>
               <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60" />
             </div>
 
             {/* Conteúdo */}
             <div className="relative z-10 max-w-4xl mx-auto">
               <h1
-                style={{ fontFamily: "Lequire, sans-serif" }}
-                className="text-5xl md:text-7xl mb-6 text-white animate-fade-in"
+              style={{ fontFamily: "Lequire, sans-serif" }}
+              className="text-5xl md:text-7xl mb-6 text-white animate-fade-in"
               >
-                Agitamos a sua vida
+              Agitamos a sua vida
               </h1>
               <p
-                className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-up"
-                style={{ animationDelay: "200ms" }}
+              className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-up"
+              style={{ animationDelay: "200ms" }}
               >
-                Descubra, organize e participe das melhores festas da cidade com o
-                Agita
+              Descubra, organize e participe das melhores festas da cidade com o
+              Agita
               </p>
               <div
-                className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
-                style={{ animationDelay: "400ms" }}
+              className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
+              style={{ animationDelay: "400ms" }}
               >
+              <button
+                onClick={() => setActiveTab("baixar")}
+                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+              >
+                <Download className="w-5 h-5" />
+                Baixar Agora
+              </button>
+              <button
+                onClick={handleClick}
+                className="px-8 py-4 bg-black/40 backdrop-blur-sm rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:text-white transition-all duration-300 border border-gray-600 flex items-center gap-2"
+              >
+                Cadastrar uma Festa
+              </button>
+              {isLoggedIn ? (
                 <button
-                  onClick={() => setActiveTab("baixar")}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                onClick={handleClick2}
+                className="px-8 py-4 bg-white/90 text-black  backdrop-blur-sm rounded-full font-semibold text-lg hover:bg-black/50 hover:text-white transition-all duration-300 border border-gray-600 flex items-center gap-2"
                 >
-                  <Download className="w-5 h-5" />
-                  Baixar Agora
+                Minhas Festas
                 </button>
-                <button
-                  onClick={handleClick}
-                  className="px-8 py-4 bg-black/40 backdrop-blur-sm rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:text-white transition-all duration-300 border border-gray-600 flex items-center gap-2"
-                >
-                  Cadastrar uma Festa
-                </button>
-                {isLoggedIn ? (
-                  <button
-                    onClick={handleClick2}
-                    className="px-8 py-4 bg-white/90 text-black  backdrop-blur-sm rounded-full font-semibold text-lg hover:bg-black/50 hover:text-white transition-all duration-300 border border-gray-600 flex items-center gap-2"
-                  >
-                    Minhas Festas
-                  </button>
-                ) : (
-                  <></>
-                )}
+              ) : (
+                <></>
+              )}
               </div>
             </div>
-          </div>
+            </div>
 
           {/* Tab Content */}
           <div className="container mx-auto px-4 py-16">
