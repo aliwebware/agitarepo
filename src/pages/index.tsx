@@ -607,7 +607,7 @@ const ApuAppWebsite = () => {
             {/* Conteúdo */}
             <div className="relative z-10 max-w-4xl mx-auto">
               <h1
-                style={{ fontFamily: "lequire, sans-serif" }}
+                style={{ fontFamily: "Lequire, sans-serif" }}
                 className="text-5xl md:text-7xl mb-6 text-white animate-fade-in"
               >
                 Agitamos a sua vida

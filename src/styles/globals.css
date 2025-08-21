@@ -6,17 +6,17 @@
 
 /* === Registro da fonte Lequire === */
 @font-face {
-  font-family: 'lequire';
+  font-family: 'Lequire';
   src: url('/fonts/lequire.woff2') format('woff2'),
        url('/fonts/lequire.woff') format('woff'),
-       url('/fonts/lequire.otf') format('opentype');
+       url('/fonts/Lequire.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
   --font-sans: Poppins, Helvetica, sans-serif; /* mantém Poppins como global */
-  --font-lequire: 'lequire', sans-serif;       /* variável só para Lequire */
+  --font-lequire: 'Lequire', sans-serif;       /* variável só para Lequire */
 }
 
 @theme inline {
