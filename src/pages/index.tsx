@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Download,
   MapPin,
@@ -37,6 +37,7 @@ const ApuAppWebsite = () => {
   const [registerState, setRegisterState] = useState("idle"); // idle, loading, success, error
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const tabContentRef = useRef<HTMLDivElement>(null);
 
   const router = useRouter();
 
@@ -333,10 +334,17 @@ const ApuAppWebsite = () => {
     );
   };
 
+  // Scroll automático ao trocar de aba
+  useEffect(() => {
+    if (tabContentRef.current) {
+      tabContentRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [activeTab]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center">
-        <div className="text-white text-xl">Carregando...</div>
+        <div className="text-white text-xl">Viva com intensidade!</div>
       </div>
     );
   }
@@ -422,6 +430,7 @@ const ApuAppWebsite = () => {
             <div className="flex items-center gap-3">
               <Image
                 src="/logo.png"
+                onClick={() => setActiveTab("sobre")}
                 alt="Logo ApuApp"
                 width={250}
                 height={250}
@@ -654,7 +663,7 @@ const ApuAppWebsite = () => {
             </div>
 
           {/* Tab Content */}
-          <div className="container mx-auto px-4 py-16">
+          <div ref={tabContentRef} className="container mx-auto px-4 py-16">
             {activeTab === "sobre" && (
               <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
@@ -948,11 +957,8 @@ const ApuAppWebsite = () => {
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-8 mb-12">
-                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all">
-                    <div
-                      style={{ justifySelf: "center" }}
-                      className="text-6xl mb-4"
-                    >
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all flex flex-col items-center">
+                    <div className="text-6xl mb-4 flex justify-center">
                       <Image
                         src="/appstore.png"
                         alt="App Store"
@@ -974,11 +980,8 @@ const ApuAppWebsite = () => {
                     />
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all">
-                    <div
-                      style={{ justifySelf: "center" }}
-                      className="text-6xl mb-4"
-                    >
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all flex flex-col items-center">
+                    <div className="text-6xl mb-4 flex justify-center">
                       <Image
                         src="/playstore.png"
                         alt="play store"
@@ -1269,7 +1272,7 @@ const ApuAppWebsite = () => {
         </div>
 
         {/* Botão flutuante do WhatsApp (canto inferior direito) */}
-        <div className="fixed right-6 bottom-6 z-50">
+        <div className="fixed right-6 bottom-10 z-50">
           <a
             href="https://wa.me/244928051534"
             target="_blank"
