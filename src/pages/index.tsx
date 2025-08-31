@@ -628,7 +628,7 @@ const ApuAppWebsite = () => {
               className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-up"
               style={{ animationDelay: "200ms" }}
               >
-              Descubra, organize e participe das melhores festas da cidade com o
+              Descubra, organize e participe das melhores festas da cidade com a plataforma 
               Agita
               </p>
               <div
@@ -672,8 +672,8 @@ const ApuAppWebsite = () => {
                   </h2>
                   <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                     O Agita é a plataforma definitiva para descobrir e participar
-                    das melhores festas e eventos da sua cidade. Conecte-se com a
-                    vida noturna, encontre eventos incríveis e viva experiências
+                    das melhores festas da sua cidade. Conecte-se com a
+                    vida noturna, encontre festas incríveis e viva experiências
                     inesquecíveis.
                   </p>
                 </div>
@@ -689,8 +689,8 @@ const ApuAppWebsite = () => {
                           Eventos do Mês
                         </h3>
                         <p className="text-gray-300">
-                          Descubra todas as festas e eventos programados para o
-                          mês inteiro, organizados por data e localização.
+                          Descubra todas as festas programadas para o
+                          mês inteiro, organizadas por data e localização.
                         </p>
                       </div>
                     </div>
@@ -718,7 +718,7 @@ const ApuAppWebsite = () => {
                           Comunidade Ativa
                         </h3>
                         <p className="text-gray-300">
-                          Conecte-se com outros usuários, compartilhe experiências
+                          (Proposta) Conecte-se com outros usuários, compartilhe experiências
                           e descubra novos amigos.
                         </p>
                       </div>
@@ -735,8 +735,8 @@ const ApuAppWebsite = () => {
                     Nossa Missão
                   </h3>
                   <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                    Democratizar o acesso à vida noturna e eventos culturais,
-                    criando uma plataforma que conecta pessoas, organizadores e
+                    Democratizar o acesso à vida noturna,
+                    por meio de uma plataforma que conecta pessoas, organizadores e
                     locais de forma simples, segura e divertida. Queremos que cada
                     noite seja uma nova aventura!
                   </p>
@@ -752,7 +752,7 @@ const ApuAppWebsite = () => {
                     Funcionalidades
                   </h2>
                   <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Descubra todas as ferramentas poderosas que fazem do Agita a
+                    Descubra todas as funcionalidades poderosas que fazem do Agita a
                     melhor escolha para sua vida social
                   </p>
                 </div>
@@ -818,6 +818,43 @@ const ApuAppWebsite = () => {
                               title="Favorite suas Festas"
                               description="Marque seus eventos favoritos e acesse-os rapidamente quando precisar"
                               delay={100}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                                        <div
+                      className="relative opacity-0 translate-y-12 transition-all duration-700 ease-out"
+                      data-scroll-animation
+                    >
+                      <div className="grid md:grid-cols-2 gap-12 items-center py-16">
+                        {/* Phone Image - Left Side */}
+                        <div className="order-1 flex justify-center">
+                          <div className="transform hover:scale-105 transition-transform duration-300">
+                            <Image
+                              src="/btnAgitarImg.png"
+                              alt="Botão de Agitar"
+                              width={440}
+                              height={440}
+                              className="drop-shadow-2xl"
+                              priority
+                            />
+                          </div>
+                        </div>
+
+                        {/* Feature Cards - Right Side */}
+                        <div className="order-2 space-y-8">
+                          <div
+                            className="opacity-0 translate-x-8 transition-all duration-700 ease-out delay-200"
+                            data-scroll-animation
+                          >
+                            <FeatureCard
+                              icon={Calendar}
+                              title="Agite as melhores festas"
+                              description="Se achar que uma festa vai aquecer, então esse é botão que deve clicar"
+                              delay={0}
                             />
                           </div>
                         </div>
@@ -1086,19 +1123,19 @@ const ApuAppWebsite = () => {
                   ))}
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="bg-gradient-to-br from-pink-500/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div style={{justifySelf: "center"}} className="gap-8">
+                  <div style={{width: '400px', minWidth: '50px'}} className="bg-gradient-to-br from-pink-500/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                     <h3 className="text-2xl font-bold text-white mb-4">
-                      Contato
+                      Contactos
                     </h3>
                     <div className="space-y-3">
-                      <div className="gap-2">
+                      <div className="flex items-center gap-2">
                         <Mail className="w-5 h-5 text-pink-400" />
-                        <span className="text-white/80">suporte@agita.com</span>
+                        <span className="text-white/80">agitaangola.tech@gmail.com</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Phone className="w-5 h-5 text-pink-400" />
-                        <span className="text-white/80">+244 912 345 678</span>
+                        <span className="text-white/80">+244 928 051 534</span>
                       </div>
                     </div>
                   </div>
@@ -1238,7 +1275,7 @@ const ApuAppWebsite = () => {
         {/* Social Media Links (lateral) */}
         <div className="fixed right-6 bottom-1/2 z-50 flex flex-col gap-4 items-center">
           <a
-            href="https://instagram.com/"
+            href="https://www.instagram.com/agita.angola/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -1254,7 +1291,7 @@ const ApuAppWebsite = () => {
             />
           </a>
           <a
-            href="https://facebook.com/"
+            href="https://www.facebook.com/share/1CGsESkzvo/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
